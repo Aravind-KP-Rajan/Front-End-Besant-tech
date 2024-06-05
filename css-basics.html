@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-Basics</title>
+  <link rel="stylesheet" href="./css-basics.css"/>
+</head>
+
+<style> /* Embedded CSS */
+
+  /* Universal selector - use (*) star */
+  *{
+    color: aqua;
+    background-color: red;
+  }
+
+  /* Tag selector- directly use the tag if wee need to use same property for multiple elements*/
+
+  h1{
+    font-size: 70px;
+  }
+
+  button{
+    background-color: lightgreen;
+    color: black;
+  }
+
+  /* class selector- use(.) dot -- Class  */
+
+  .profession{
+    color: greenyellow
+  }
+
+  /* ID selector - use (#) hash */
+
+  #dream{
+    font-weight: bold;
+    font-size: 100px;
+    color: white;
+  }
+
+  /* CSS-SPecificity --- Priority 
+  
+  1. Inline CSS
+  2. Embedded CSS
+    2.1 ID selector
+    2.2 Class selector
+    2.3 Tag selector
+    2.4 Universal selector
+  3. External CSS 
+
+  */
+
+  img{
+    height:200px
+  }
+
+  .airplane-img{
+    height: 100px;
+  }
+
+  #airplane-img-id{
+    height: 170px;
+  }
+
+
+
+
+</style>
+
+
+
+<body>
+
+  <h1>Aravind</h1>
+
+  <h2 style="font-size: 50px; color: lightcyan;">Bsc</h2>
+
+  <button>Submit</button>
+
+  <p class="profession">Pilot</p>
+  
+  <div id="dream">
+    Captain
+  </div>
+
+  <img src="./Html CSS/Assets/Airplane.png" class="airplane-img" id="airplane-img-id"/>
+</body>
+</html>
