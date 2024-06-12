@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition</title>
+</head>
+
+<style>
+  .button-css{
+    padding: 5px 10px;
+    font-size: 20px;
+    margin-left: 50px;
+    width: 180px;
+    transition-property: width, background-color;
+    transition-duration: 2s,3s;
+    transition-timing-function: ease-out;
+    /* transition-delay: 1s; */
+  }
+
+.button-css:hover{
+  width: 230px;
+  background-color: aqua;
+}
+
+</style>
+<body>
+  <button class="button-css"> Transition Button</button>
+</body>
+</html>
