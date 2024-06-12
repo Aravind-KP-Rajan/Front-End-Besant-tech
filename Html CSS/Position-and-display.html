@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position and Display</title>
+  ,<style>
+
+    .box-one{
+      border: 2px solid green;
+      margin-top: 20px;;
+    }
+
+    .div-one,
+    .div-two,
+    .div-three{
+      height: 20px;
+    }
+
+    .div-one{
+      background-color: pink;
+      border: 2px solid red;
+    }
+
+    .div-two{
+      background-color: aqua;
+      position: absolute; /* other elements occupies this space */
+      left: 200px;
+      border: 2px solid red;
+
+    }
+
+    .div-three{
+      background-color: pink;
+    }
+
+
+    /* position: sticky- inside boundary it can go anywhere 
+
+    position: absolute - it can move outside the boundary 
+
+    position: fixed - overlap outside the boundary within the entire screen
+    
+    position: relative - overlap within boumdary
+
+    if two element has relative, use z-index to
+    
+    */
+
+  </style>
+</head>
+<body>
+  <div class="box-one">
+    <div class="div-one">Div1</div>
+    <div class="div-two">Div2</div>
+    <div class="div-three">Div3</div>
+  </div>
+  
+
+  <div class="box-one">
+    <div class="div-one">Div1</div>
+    <div class="div-two">Div2</div>
+    <div class="div-three">Div3</div>
+  </div>
+  
+  <div class="box-one">
+    <div class="div-one">Div1</div>
+    <div class="div-two">Div2</div>
+    <div class="div-three">Div3</div>
+  </div>
+  
+</body>
+</html>
