@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions</title>
+</head>
+<body>
+
+  <div>
+    <div>
+      <h2>Conditions</h2>
+    </div>
+    <div>
+      Enter Age: <input type="text" name="age" id="age" onkeyup="ageCalculation()"> 
+      <p class="ageResult"></p>
+    </div>
+  </div>
+  
+
+  <script>
+
+
+    
+
+    function ageCalculation(){
+
+      let age = Number(document.getElementById('age').value);
+
+      let ageResult = document.querySelector('.ageResult');
+
+      let result = "" ;
+
+      if(age<18 && age>11 ){
+        result = "You're Minor da Thambi, poi nalla padi"
+      }else if(age>=18 && age<30){
+        result = "You're in Vaaliba vayasu, Enjoy the life";
+      }else if (age>=30 && age<=50){
+        result="Take care of Family"
+      }else if(age>50){
+        if(age>99){
+          result = "sorgathil santhippom"
+        }else{
+          result="Enjoy the retired life"
+        }
+      }else{
+        result = "valaranum bro neenga"
+      }
+      ageResult.innerHTML = result;
+    }
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+<!-- 
+
+(1) Get I/P from user and find which number is gretaer
+(2) "" and print whether the given number is (+)ve or (-)ve
+(3) "" and print whether the given number is odd or even
+(4) "" and print whether the given number is single digit or double digit or triple digit
+(5) "" as mark and print respective grade based in below chart
+
+A grade = 90 - 100
+B grade = 80 - 90
+C grade = 70 - 80
+D grade = 60 -70
+E grade = 50 -60
+F grade = less than 50
+
+-->
