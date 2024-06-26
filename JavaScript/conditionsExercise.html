@@ -8,9 +8,11 @@
 
 <body>
 
+  <h1 class="text-center text-info"> CONDITIONS EXERCISE</h1>
+
   <!-- *******************GREATER NUMBER EXERCISE**************************************** -->
 
-  <h2 class="text-warning">GREATER NUMBER EXERCISE</h2>
+  <h2 class="text-warning">Greater Number</h2>
 
   <div class="container">
     <div class="input-group mb-3" >
@@ -104,7 +106,7 @@
 
     <div class="container">
       <div class="input-group mb-3" >
-        <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
+        <span class="input-group-text" id="inputGroup-sizing-default">Marks</span>
         <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="marks">
       </div>
   
@@ -197,9 +199,20 @@
 
     /* ******************************************************************************************** */
 
-    function 
+    function gradeCalculation(){
+      let marks = document.getElementById('marks').value;
+      let gradeResult = document.querySelector('.gradeResult');
 
-
+      if(marks>90 && marks<=100){
+        gradeResult.innerHTML = "A grade - 'Good'";
+      }else if(marks>70 && marks <= 90){
+        gradeResult.innerHTML = "B grade - 'Fair'";
+      }else if(marks>50 && marks <=70){
+        gradeResult.innerHTML = "C grade - 'Fair'";
+      }else{
+        gradeResult.innerHTML = "Dai Parama Podi";
+      }
+    }
 
 
 </script>
