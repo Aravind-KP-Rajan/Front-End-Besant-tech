@@ -141,8 +141,26 @@
       </div>
     </div>
 
-     
+     <!-- ******************* Reverse Number **************************************** -->     
 
+     <h2 class="text-warning">Reverse Number</h2>
+
+     <div class="container">
+       <div class="input-group mb-3" >
+         <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
+         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" class="inputReverseNumber">
+       </div>
+   
+       <div class="row">
+         <div class="col">
+           <button class="btn btn-success" onclick="reverseNumber()">Result </button>  
+         </div>
+         <div class="col">
+           <h2 class="reverseResult text-light bg-dark"></h2>
+         </div>
+       </div>
+     </div>
+ 
 
 
 <script>
@@ -316,6 +334,22 @@ function neutraliseToSingleDigit() {
 }
 
 
+function reverseNumber(){
+  let inputReverseNumber = Number(document.querySelector('.inputReverseNumber'));
+
+  console.log(typeof(inputReverseNumber));
+
+  let finalResult = inputReverseNumber.toString().split('').reverse().join('');
+
+  let resultNum = document.querySelector('.reverseResult');
+
+  resultNum.innerHTML = finalResult;
+
+}
+
+
+
+
 
 
 
@@ -343,7 +377,6 @@ function neutraliseToSingleDigit() {
      }
 
      console.log(neutraliseToSingleDigit(98)); */
-
 
 
 </script>
