@@ -36,6 +36,31 @@
     </div>
 
   </div>
+
+  <!-- script -->
+
+  <script>
+    function greaterNumberCalculation(){
+
+      let numOne = Number(document.getElementById('numberOne').value);
+      let numTwo = Number(document.getElementById('numberTwo').value);
+      let greaterNumberResult = document.querySelector('.greaterNumberResult');
+
+        if(numOne>numTwo){
+          greaterNumberResult.innerHTML = " Number 1 is Greater";
+        }else if(numOne == numTwo){
+            greaterNumberResult.innerHTML = " Number 1 and Number 2 are Equal";
+        if(numOne=="" || numTwo==""){
+              greaterNumberResult.innerHTML = " Numbers are missing"
+            }
+        }else {
+          greaterNumberResult.innerHTML = "Number 2 is Greater"
+        }
+      }
+  </script>
+
+
+
   <!-- *******************(+)ve or (-)ve Number**************************************** -->
 
   <h2 class="text-warning">(+)ve or (-)ve</h2>
@@ -56,6 +81,25 @@
     </div>
 
   </div>
+
+  <!-- script -->
+
+  <script>
+      function numberType(){
+
+        let numType = Number(document.getElementById('numberType').value);
+        let numberTypeResult = document.querySelector('.numberTypeResult');
+
+        if(numType>0){
+          numberTypeResult.innerHTML = "Number is Positive";
+        }else if(numType == ""){
+          numberTypeResult.innerHTML = "Enter the Number";
+        } else{
+          numberTypeResult.innerHTML = "Number is Negative";
+        }
+
+        }
+  </script>
 
   <!-- *******************odd or even Number**************************************** -->
 
@@ -80,6 +124,24 @@
 
   </div>
 
+<!-- script -->
+
+  <script>
+      function oddEven(){
+      let number = document.getElementById('oddEven').value;
+      let numberTypeResult = document.querySelector('.oddEvenResult');
+
+      if(number%2 == 0){
+        numberTypeResult.innerHTML = "Even Number";
+      }else if(number == "" && number == 0){
+        numberTypeResult.innerHTML = "Enter the Number";
+      }else{
+        numberTypeResult.innerHTML = "Odd Number";
+      }
+
+    }
+  </script>
+
   <!-- *******************Digits calculation**************************************** -->
 
   <h2 class="text-warning">How many Digits?</h2>
@@ -100,6 +162,30 @@
       </div>
     </div>
 
+<!-- script -->
+
+    <script>
+      
+      function digitsCalculation(){
+
+        let number = document.getElementById('digits').value;
+        let digitsResult = document.querySelector('.digitsResult');
+
+        if(number.length == 1 ){
+          digitsResult.innerHTML = "One digit"
+        }else if (number.length == 2){
+          digitsResult.innerHTML = "two digit"
+        }
+        else if(number == ""){
+          digitsResult.innerHTML = "Enter the Number";
+        }else{
+          digitsResult.innerHTML = "three digits"
+        }
+
+        }
+
+    </script>
+
       <!-- *******************Grade calculation**************************************** -->
 
       <h2 class="text-warning">Grade calculation</h2>
@@ -119,6 +205,27 @@
         </div>
       </div>
     </div>
+
+<!-- script -->
+
+    <script>
+
+      function gradeCalculation(){
+        let marks = document.getElementById('marks').value;
+        let gradeResult = document.querySelector('.gradeResult');
+
+        if(marks>90 && marks<=100){
+          gradeResult.innerHTML = "A grade - 'Good'";
+        }else if(marks>70 && marks <= 90){
+          gradeResult.innerHTML = "B grade - 'Fair'";
+        }else if(marks>50 && marks <=70){
+          gradeResult.innerHTML = "C grade - 'Fair'";
+        }else{
+          gradeResult.innerHTML = "Dai Parama, Padi da";
+        }
+      }
+
+    </script>
 
 
      <!-- ******************* Split number and Neutralize to single digit**************************************** -->
@@ -141,6 +248,32 @@
       </div>
     </div>
 
+<!-- script -->
+
+    <script>
+      function neutraliseToSingleDigit() {
+        const num = Number(document.getElementById('inputNumber').value);
+        let sum = num;
+        
+        while (sum >= 10) {
+          let tempSum = 0;
+          const strNum = sum.toString();
+          
+          for (let i = 0; i < strNum.length; i++) {
+            tempSum += parseInt(strNum[i]);
+          }
+          
+          sum = tempSum;
+        }
+
+        let result = document.querySelector('.result');
+        result.innerHTML = sum;
+        console.log(sum);
+        return sum;
+      }
+
+    </script>
+
      <!-- ******************* Reverse Number **************************************** -->     
 
      <h2 class="text-warning">Reverse Number</h2>
@@ -148,7 +281,7 @@
      <div class="container">
        <div class="input-group mb-3" >
          <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
-         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" class="inputReverseNumber">
+         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputReverseNumber"/>
        </div>
    
        <div class="row">
@@ -160,102 +293,29 @@
          </div>
        </div>
      </div>
+
+<!-- script -->
+
+      <script>
+        function reverseNumber(){
+          let inputReverseNumber = Number(document.getElementById('inputReverseNumber').value);
+
+          console.log(inputReverseNumber);
+
+          let numsss = 123;
+
+          let finalResult = inputReverseNumber.toString().split('').reverse().join('');
+
+          let resultNum = document.querySelector('.reverseResult');
+
+          resultNum.innerHTML = finalResult;
+
+        }
+      </script>
  
 
 
 <script>
-
-  function greaterNumberCalculation(){
-
-  let numOne = Number(document.getElementById('numberOne').value);
-  let numTwo = Number(document.getElementById('numberTwo').value);
-  let greaterNumberResult = document.querySelector('.greaterNumberResult');
-
-    if(numOne>numTwo){
-      greaterNumberResult.innerHTML = " Number 1 is Greater";
-    }else if(numOne == numTwo){
-        greaterNumberResult.innerHTML = " Number 1 and Number 2 are Equal";
-    if(numOne=="" || numTwo==""){
-          greaterNumberResult.innerHTML = " Numbers are missing"
-        }
-    }else {
-      greaterNumberResult.innerHTML = "Number 2 is Greater"
-    }
-  }
-
-  /* ******************************************************************************************** */
-
-  function numberType(){
-
-    let numType = Number(document.getElementById('numberType').value);
-    let numberTypeResult = document.querySelector('.numberTypeResult');
-
-    if(numType>0){
-      numberTypeResult.innerHTML = "Number is Positive";
-    }else if(numType == ""){
-      numberTypeResult.innerHTML = "Enter the Number";
-    } else{
-      numberTypeResult.innerHTML = "Number is Negative";
-    }
-
-  }
-
-  /* ******************************************************************************************** */
-
-
-  function oddEven(){
-    let number = document.getElementById('oddEven').value;
-    let numberTypeResult = document.querySelector('.oddEvenResult');
-
-    if(number%2 == 0){
-      numberTypeResult.innerHTML = "Even Number";
-    }else if(number == "" && number == 0){
-      numberTypeResult.innerHTML = "Enter the Number";
-    }else{
-      numberTypeResult.innerHTML = "Odd Number";
-    }
-
-  }
-
-  /* ******************************************************************************************** */
-
-
-  function digitsCalculation(){
-
-    let number = document.getElementById('digits').value;
-    let digitsResult = document.querySelector('.digitsResult');
-
-    if(number.length == 1 ){
-      digitsResult.innerHTML = "One digit"
-    }else if (number.length == 2){
-      digitsResult.innerHTML = "two digit"
-    }
-    else if(number == ""){
-      digitsResult.innerHTML = "Enter the Number";
-    }else{
-      digitsResult.innerHTML = "three digits"
-    }
-
-  }
-
-    /* ******************************************************************************************** */
-
-    function gradeCalculation(){
-      let marks = document.getElementById('marks').value;
-      let gradeResult = document.querySelector('.gradeResult');
-
-      if(marks>90 && marks<=100){
-        gradeResult.innerHTML = "A grade - 'Good'";
-      }else if(marks>70 && marks <= 90){
-        gradeResult.innerHTML = "B grade - 'Fair'";
-      }else if(marks>50 && marks <=70){
-        gradeResult.innerHTML = "C grade - 'Fair'";
-      }else{
-        gradeResult.innerHTML = "Dai Parama, Padi da";
-      }
-    }
-
-     /* ******************************************************************************************** */
 
 
 /*      function splitCalculation(){
@@ -308,45 +368,6 @@ console.log(split(2347));
         console.log(sum);
        //return sum;
       } */
-
-
-
-
-function neutraliseToSingleDigit() {
-  const num = Number(document.getElementById('inputNumber').value);
-  let sum = num;
-  
-  while (sum >= 10) {
-    let tempSum = 0;
-    const strNum = sum.toString();
-    
-    for (let i = 0; i < strNum.length; i++) {
-      tempSum += parseInt(strNum[i]);
-    }
-    
-    sum = tempSum;
-  }
-
-  let result = document.querySelector('.result');
-  result.innerHTML = sum;
-  console.log(sum);
-  return sum;
-}
-
-
-function reverseNumber(){
-  let inputReverseNumber = Number(document.querySelector('.inputReverseNumber'));
-
-  console.log(typeof(inputReverseNumber));
-
-  let finalResult = inputReverseNumber.toString().split('').reverse().join('');
-
-  let resultNum = document.querySelector('.reverseResult');
-
-  resultNum.innerHTML = finalResult;
-
-}
-
 
 
 
