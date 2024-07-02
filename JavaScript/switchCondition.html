@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Case</title>
+</head>
+<body>
+  
+
+  <script>
+
+    function switchCalculation(productId){
+      
+    switch(productId){
+      case 1001: productName = "Rice";
+      break;
+
+      case 1002: productName = "Oil";
+      break;
+
+      case 1003: productName = "flour";
+      break;
+
+      default: "invalidId";
+    }
+    console.log(productName);
+  }
+
+  switchCalculation(1002);
+  </script>
+</body>
+</html>
