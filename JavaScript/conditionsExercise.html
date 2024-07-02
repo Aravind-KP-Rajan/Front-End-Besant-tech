@@ -281,7 +281,7 @@
      <div class="container">
        <div class="input-group mb-3" >
          <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
-         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputReverseNumber"/>
+         <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="inputReverseNumber"/>
        </div>
    
        <div class="row">
@@ -298,18 +298,16 @@
 
       <script>
         function reverseNumber(){
-          let inputReverseNumber = Number(document.getElementById('inputReverseNumber').value);
+          let inputReverseNumber = (document.getElementById('inputReverseNumber').value);
 
-          console.log(inputReverseNumber);
-
-          let numsss = 123;
+          console.log(typeof(inputReverseNumber));
 
           let finalResult = inputReverseNumber.toString().split('').reverse().join('');
 
           let resultNum = document.querySelector('.reverseResult');
 
           resultNum.innerHTML = finalResult;
-
+          
         }
       </script>
  
@@ -319,31 +317,31 @@
 
 
 /*      function splitCalculation(){
-      let inputNumber = document.getElementById('inputNumber').value;
+            let inputNumber = document.getElementById('inputNumber').value;
 
-      let result = document.querySelector('.result');
-
-
-
-      result.innerHTML = "Result";
-
-      var num = 278;
-var digits = [];
-while (num != 0) {
-    digits.push(num % 10);
-    num = Math.trunc(num / 10);
-}
-digits.reverse();
-console.log(digits);
-
-function split(n){
-  return n.toString().split('').map(Number);
-}
-console.log(split(2347));
+            let result = document.querySelector('.result');
 
 
-     }
+
+            result.innerHTML = "Result";
+
+            var num = 278;
+            var digits = [];
+            while (num != 0) {
+                digits.push(num % 10);
+                num = Math.trunc(num / 10);
+            }
+          digits.reverse();
+          console.log(digits);
+
+        function split(n){
+            return n.toString().split('').map(Number);
+          }
+          console.log(split(2347));
+          }
  */
+
+
  /*     function neutraliseToSingleDigit() {
        const num = Number(document.getElementById('inputNumber').value);
        const strNum = num.toString();
@@ -368,11 +366,6 @@ console.log(split(2347));
         console.log(sum);
        //return sum;
       } */
-
-
-
-
-
 
      //console.log(neutraliseToSingleDigit(95));
 
