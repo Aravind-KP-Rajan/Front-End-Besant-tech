@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button</title>
+
+  <style>
+    .closed{
+    background-color: rgb(246, 10, 10) ;
+    color: black;
+    border: none;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 2px;
+  }
+
+</style>
+</head>
+<body>
+
+  <button class="open-button close-button" onclick="toggle()">Open</button>
+  
+  <script>
+
+    function toggle(){
+      const openButton = document.querySelector('.open-button');
+
+      if(openButton.innerHTML === 'Open'){
+        openButton.innerHTML = 'Close';
+        openButton.classList.add('closed')
+      }else{
+        openButton.innerHTML = 'Open';
+        openButton.classList.remove('closed');
+      }
+    }
+
+  </script>
+
+</body>
+</html>
