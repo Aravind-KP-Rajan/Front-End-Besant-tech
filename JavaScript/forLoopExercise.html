@@ -123,17 +123,14 @@
         let evnNum = "";
 
           for(let num=startNumber; num<=endNumber; num++ ){
-            
-            
-            /* evnNum += Number(num%2==0);
-            result += evnNum; */
-
-          /*   if(result%2 == 0){
-              console.log(result);
-            } */
+            if(num%2 == 0){
+              result+= num +  " ";
+            }
           }
         resultPara.innerHTML = `Result: ${result}` ;
       }
+
+
 
       
     </script>
