@@ -10,7 +10,7 @@
       <!-- print the numbers in HTML page -->
   <div>
 
-    <h2>Print the numbers in HTML page</h2>
+    <h2>FOR loop</h2>
     <span>Start Number: </span>
     <input type="number" id="js-start-number">
 <br>
@@ -73,13 +73,47 @@
 
       function sumOfNumbers(){
         getElementsFromHTML();
-        let result = "";
+        let result = 0;
 
+        if(startNumber < endNumber){
           for(let num=startNumber; num<=endNumber; num++ ){
-            result = startNumber + endNumber;
+            result += num;
+          }
+        }else if(startNumber > endNumber){
+          for(let num=startNumber; num>=endNumber; num--){
+            result += num;
+          }
+        }else{
+            result = "Numbers are equal"
           }
 
         resultPara.innerHTML = `Result: ${result}` ;
+      }
+
+
+      function averageNumbers(){
+        getElementsFromHTML();
+        
+        let result = 0;
+        let count = 0;
+
+        if(startNumber < endNumber){
+
+          for(let num=startNumber; num<=endNumber; num++ ){
+            result += num;
+            count++;
+          }
+        }else if(startNumber > endNumber){
+          for(let num=startNumber; num>=endNumber; num--){
+            result += num;
+            count++;
+          }
+        }else {
+          resultPara.innerHTML = `Result: Numbers are equal (${startNumber}). Average: ${startNumber}`;
+          return;        
+        }
+          average = result/count;
+          resultPara.innerHTML = `Result: ${average}` ;
       }
 
 
