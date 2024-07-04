@@ -24,9 +24,19 @@
       }
 
       document.querySelector('.js-for-loop').innerHTML = result;
+   
+
+    let n = 5;
+      for (let i = 1; i <= n; i++) {
+        let str = "* ";
+        console.log(str.repeat(i));
+      
+      document.querySelector('.js-for-loop').innerHTML = str.repeat(i);
     }
-  
+    }
+
     forLoop();
+
   </script>
   
 </body>
