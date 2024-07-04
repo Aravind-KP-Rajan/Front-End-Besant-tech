@@ -130,7 +130,17 @@
         resultPara.innerHTML = `Result: ${result}` ;
       }
 
+      function multiplyNumbers(){
+        getElementsFromHTML();
+        let result = "";
+        for(let num=1; num<=10; num++ ){
+          
+          let multiplicationResult = num * startNumber;
+          result += `${startNumber} * ${num} = ${multiplicationResult} <br>`;
 
+      }
+       resultPara.innerHTML = `Result: <br> ${result} ` ;
+    }
 
       
     </script>
