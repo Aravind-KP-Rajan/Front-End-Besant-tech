@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Loop</title>
+</head>
+<body>
+
+  <div>
+    <h2>FOR LOOP</h2>
+
+    <p class="js-for-loop"></p>
+  </div>
+
+  <script>
+
+    function forLoop(){
+
+      let result = "";
+      for(let num=1; num<=10; num++){
+        console.log("*");
+        result+= num + "<br>";
+      }
+
+      document.querySelector('.js-for-loop').innerHTML = result;
+    }
+  
+    forLoop();
+  </script>
+  
+</body>
+
+
+<!-- 
+
+(1) Get I/P num rabge from the user and print the numbers in HTML page
+(2) Get I/P num range from user and print the sum of num range
+(3) """" and print the average of num range
+(4) """" and print only the even num from the num range
+(5) """" and print multiplication table from 1 to 10
+
+
+-->
+</html>
+
+
+
