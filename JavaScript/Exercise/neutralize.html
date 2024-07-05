@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neutralize</title>
+</head>
+<body>
+
+
+  <div>
+    <h2>Neutralize to single digit</h2>
+
+    Number: <input type="number" class="js-input-number" />
+
+    <br>
+    <br>
+
+    <button onclick="neutralize()">Neutralize</button>
+    <p class="js-result">Result:</p>
+
+  </div>
+  
+
+</body>
+<script>
+
+  function neutralize(){
+
+    let num = Number(document.querySelector('.js-input-number').value);
+    let sum = num;
+        
+        while (sum >= 10) {
+          let tempSum = 0;
+          const strNum = sum.toString();
+          
+          for (let i = 0; i < strNum.length; i++) {
+            tempSum += parseInt(strNum[i]);
+          }
+          
+          sum = tempSum;
+        }
+
+        let result = document.querySelector('.js-result');
+        result.innerHTML = `Result: ${sum}`;
+        console.log(sum);
+        return sum;
+      }
+
+</script>
+</html>
