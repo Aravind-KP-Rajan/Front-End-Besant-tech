@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill discount</title>
+</head>
+<body>
+
+<div>
+  <h2>Bill disount</h2>
+
+  <p> KAI ENTHI BHAVAN</p>
+
+  <div>
+
+    Item name: <input type="text" class="js-itemName" />
+    <br>
+    <br>
+    Price: <input type="text" class="js-price" />
+    <br>
+    <br>
+
+    <button onclick="billCalculation()">Print amount</button>
+
+
+    <p class="js-discount-amount">Discount: </p>
+    <p class="js-final-amount">Final Amount: </p>
+
+    
+  </div>
+
+  <script>
+
+    function billCalculation(){
+
+      let price = Number(document.querySelector('.js-price').value);
+
+      let discount = document.querySelector('.js-discount-amount');
+
+      let finalAmount = document.querySelector('.js-final-amount');
+
+      let result = "";
+
+      let discAmount = 0;
+
+      let disc = 0.1; //10% discount
+
+
+      if(price >= 2000){
+        discAmount = (price*disc);
+        result = price-discAmount;
+        console.log(result);
+      }else{
+        result = price
+      }
+
+      discount.innerHTML = `Discount: ${discAmount.toFixed(2)}`;
+      finalAmount.innerHTML = `Final Amount: ${result}`;
+
+    }
+
+
+  </script>
+</div>
+</body>
+</html>
