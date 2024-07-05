@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Card exercise</title>
+</head>
+<body>
+
+  <div>
+    <h2>Bill calculation</h2>
+
+    item name: <input type="text">
+
+    price: <input type="number" class="js-price">
+
+    <p class="js-gst"> GST(18%): </p>
+
+    <p class="js-final-amount">Final amount : </p>
+
+    <select class="js-options">
+      <option>payment method</option>
+      <option>cash</option>
+      <option>card</option>
+      <option>upi</option>
+    </select>
+
+    <br>
+    <br>
+    <br>
+
+    <button onclick="billCalculation()">Calculate </button>
+
+  </div>
+
+  
+  <script>
+
+    function billCalculation(){
+
+      let paymentMethod = document.querySelector('.js-options').value;
+
+      let price = Number(document.querySelector('.js-price').value);
+
+      let gstHTML = document.querySelector('.js-gst');
+
+      let finalPriceHTML = document.querySelector('.js-final-amount');
+
+      let gstAmount = 0.18;
+
+      let cardCharges = 0.02;
+
+      let gstPrice = price * gstAmount;
+
+      let finalPrice = gstPrice + price;
+
+      let finalizedAmount = 0;
+
+      let result =0;
+
+      if( paymentMethod === "card"){
+        result = finalPrice * cardCharges;
+        finalizedAmount = finalPrice + result;
+      }else{
+        finalizedAmount = finalPrice;
+      }
+
+      gstHTML.innerHTML = `GST(18%): ${gstPrice}`;
+
+      finalPriceHTML.innerHTML = `Final amount :${finalizedAmount}`;
+
+
+
+    }
+  </script>
+</body>
+</html>
