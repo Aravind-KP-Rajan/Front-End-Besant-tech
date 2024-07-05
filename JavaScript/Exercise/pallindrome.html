@@ -21,11 +21,21 @@
 
   <script>
 
+    let resultHtml = document.querySelector('.js-result');
+    let result ="";
+
     function pallindrome(){
       let num = document.querySelector('.js-input-number').value;
+      let rev = num.split("").reverse().join("");
 
-
-    }
+      if (rev == num) {
+         result = "Given value is pallindrome";
+      }else{
+      result = "Given value is not a pallindrome";
+      }
+      
+      resultHtml.innerHTML=(`Result: ${result}`)
+}
   </script>
 </body>
 </html>
