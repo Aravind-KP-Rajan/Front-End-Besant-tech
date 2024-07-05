@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee hike</title>
+</head>
+
+<body>
+
+  <div>
+
+    <h2>Employee Hike</h2>
+
+    employee name: <input type="text">
+    <br>
+    <br>
+    years of experience: 
+    <select class="js-years">
+      <option>1</option>
+      <option>2</option>
+      <option>above 3</option>
+
+    </select>
+
+    <br>
+    <br>
+    current salary: <input type="number" class="js-salary">
+    <br>
+    <br>
+    <button onclick="employeeHike()">Calculate</button>
+    <p class="js-hike">Hike(+15%):</p>
+    <p class="js-updated-salary">Updated salary:</p>
+
+  </div>
+  
+  <script>
+
+    function employeeHike(){
+
+      let experience = document.querySelector('.js-years').value;
+
+      let salary = Number(document.querySelector('.js-salary').value);
+
+      let hikeHTML = document.querySelector('.js-hike');
+
+      let updatedSalary = document.querySelector('.js-updated-salary');
+
+      let result = 0;
+
+      let hikeAmount = 0.15;
+
+
+      if(experience === "above 3" && salary < 30000){
+        hikeAmount = salary * hikeAmount;
+        result = hikeAmount + salary;
+      }else{
+        result = salary;
+        hikeAmount = "Not Applicable";
+      }
+
+      hikeHTML.innerHTML = `Hike(+15%): ${hikeAmount}`;
+      updatedSalary.innerHTML = `Updated salary: ${result}`;
+    }
+  </script>
+</body>
+</html>
