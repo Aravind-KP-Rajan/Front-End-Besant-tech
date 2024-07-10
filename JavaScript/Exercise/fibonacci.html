@@ -22,30 +22,44 @@
   <script>
 
     let resultHtml = document.querySelector('.js-result');
+    console.log(typeof(resultHtml));
 
     function fibonacci(){
       let num = Number(document.querySelector('.js-input-number').value);
       let num1 = 0;
       let num2 = 1;
-      let result;
+      let tempNum = 0;
+      let result="";
 
-        if (num === 1) {
+/*         if (num == 1) {
             result = num1;
-        } else if (num === 2) {
+        } else if (num == 2) {
             result = num2;
         } else {
-            for (let i = 3; i <= num; i++) {
+            for (let i = 0; i <= num; i++) {
                 result = num1 + num2;
                 num1 = num2;
                 num2 = result;
+                return result;
             }
-            return num2;
+        } */
+
+        for (let i=0; i<=num; i++){
+            tempNum = num1 +num2; //
+            console.log(tempNum);
+ 
+            num1 = num2;
+            console.log(num1);
+
+            num2 = tempNum;
+            console.log(num2);
+
+            result = tempNum;
+            console.log(result);
         }
-
-        resultHtml.innerHTML=(`Result: ${num2}`);
-
+        resultHtml.innerHTML=`Fibonacci Result: ${result}`;
     }
-    
+
   </script>
 </body>
 </html>
