@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h2>Login</h2>
+        <input type="text" id="user" name="user" placeholder="Username"/>
+        <input type="password" id="pswd" name="pswd" placeholder="Password"/>
+        <button type="button" onclick="checkLogin()">Login</button>
+    </div>
+    <script>
+        function checkLogin(){
+            let user = document.getElementById('user').value;
+            let pswd = document.getElementById('pswd').value;
+
+            if(user=="admin" && pswd=="12345"){
+                alert("Successfully Logged In");
+                sessionStorage.setItem("SessionId","admin");
+                window.location.href="./sessionHome.html";
+            }else{
+                alert("Invalid Username or Password");
+            }
+
+
+        }
+    </script>
+</body>
+</html>
