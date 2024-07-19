@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Functions</h2>
+        <script>
+            function outerFun(){
+                function innerFun(){
+                    console.log("I am inner Function");
+                }
+
+                innerFun();
+            }
+            outerFun();
+           // innerFun();
+
+            function setCounter(num){
+                let counter = num;
+
+                function getCounter(){
+                    counter++;
+                    return counter;
+                }
+
+                return getCounter;
+            }
+            let getCounter = setCounter(10);
+            console.log(getCounter());
+            console.log(getCounter());
+            console.log(getCounter());
+            console.log(getCounter());
+
+            function shop(buy){
+                console.log("Inside Shop");
+                buy();
+            }
+
+            function buy(){
+                console.log("I am buying");
+            }
+
+            shop(buy);
+
+
+            function printNum(num){
+                console.log(num);
+                if(num < 10){
+                    printNum(num+1);
+                }
+            }
+
+            printNum(1);
+        </script>
+    </div>
+    <div>
+        <h2>Array</h2>
+        <script>
+            function arrEx(){
+                let arr = [10,15,20,25,30,35];
+
+               console.log( arr.filter((num)=>{ return num%2==0}) );
+               console.log( arr.map((num)=> { return num*2}));
+               arr=[2,4,5,6,8];
+               console.log( arr.some((num)=> num%2!=0));
+               arr = [1,3,5,6,7,9];
+               console.log( arr.every((num)=> num%2!=0));
+
+            }
+            arrEx();
+            function arr2DEx(){
+                let arr2D = [ 
+                                [10,20,30], 
+                                [40,50,60], 
+                                [70,80,90] 
+                            ];
+                console.log(arr2D);
+
+                for(let outer=0; outer<arr2D.length; outer++){
+                    // let arr = arr2D[outer];
+                    // console.log(arr, arr.length);
+                    // for(let inner=0; inner<arr.length; arr++){
+                    //     console.log(arr[inner]);
+                    // }
+                    for(let inner=0; inner<arr2D[outer].length; inner++){
+                        console.log(arr2D[outer][inner]);
+                    }
+                }
+
+                console.log(arr2D);
+                console.log(arr2D.flat(1));
+            }
+            arr2DEx();
+        </script>
+    </div>
+    
+</body>
+</html>
