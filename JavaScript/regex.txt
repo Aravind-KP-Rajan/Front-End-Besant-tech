@@ -1,0 +1,32 @@
+REGEX
+
+[] - denotes range
+
+eg: [a-z] means it'll check if there is anything inside the range of small a-z.
+
+regex denoted by / [a-z] /
+
+let ptn = / [a-z] /;
+
+str.match (ptn);
+
+ptn.test("abcd"); // it'll give true or false value
+
+................
+
+^  -start
+$ - end
+. - none or one
+* - one or more
+{} - length or number of occurence
+eg: {8,12} - min 8 to max 12
+() -grouping 
+ 
+
+
+let password = / ^(?=.* [a-z]) (?=.* [A-Z]) (?=.* [0-9]) (?=.* [@$-_]) {8,12} $  /;
+
+
+let email = / ^ ([a-z]) + ([a-z A-Z 0-9]) + ([@]) +([a-z]) + ([.]) + ([a-z]) $ /;
+
+
