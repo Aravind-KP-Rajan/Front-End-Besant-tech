@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REGEX</title>
+</head>
+<body>
+  
+
+  <div>REGEX</div>
+
+  <script>
+
+function regexEg(){
+
+  let ptn = /[a-z]/; //don't leave space in between / /;
+
+
+  console.log(ptn.test("abc"));
+
+  console.log(ptn.test("12"));
+
+  ptn = /^[a]/
+
+  console.log(ptn.test("bc"));
+  console.log(ptn.test("abx"));
+  
+
+  Ptn = /^(?=.* [a-z]) (?=.* [A-Z]) (?=.* [0-9]) (?=.* [@$-_]) {8,12} $/;
+  
+}
+
+regexEg();
+
+  </script>
+</body>
+</html>
+
+
+
+<!-- 
+
+
+
+-->
