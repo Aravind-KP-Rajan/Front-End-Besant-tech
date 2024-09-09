@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Topics</title>
+</head>
+<body>
+    <div>
+        <h2>Js Topics</h2>
+        <div>
+            <h3>Date</h3>
+            <script>
+                function dateEx(){
+                    let dt = new Date();
+                    
+                    console.log(dt);
+                    console.log(dt.getFullYear());
+                    console.log(dt.getMonth());
+                    console.log(dt.getDate());
+                    console.log(dt.getDay());
+                    console.log(dt.getHours());
+                    console.log(dt.getMinutes());
+                    console.log(dt.getSeconds());
+                    console.log(dt.getMilliseconds());
+                    console.log(dt.getTime());
+                    console.log(dt);
+
+                    dt.setFullYear(2025);
+                     console.log(dt);
+                     dt.setMonth(0);
+                     console.log(dt);
+                     dt.setDate(14);
+                     console.log(dt);
+                     dt.setHours(6);
+                     console.log(dt);
+                     dt.setMinutes(35);
+                     console.log(dt);
+                     dt.setSeconds(50);
+                     console.log(dt);
+                     dt.setMilliseconds(560);
+                     console.log(dt);
+
+                     let perDayMSec = 24*60*60*1000;
+                     let sevenDayMSec = perDayMSec * 20;
+                     dt.setTime(dt.getTime()-sevenDayMSec);
+                     console.log(dt);
+                     console.log(new Date('12/15/2026'));
+                     console.log(new Date('18 JUL 2027'));
+                     console.log(new Date('20 March 2029'));
+                     console.log(new Date('Aug 17 2020'));
+                }
+                dateEx();
+            </script>
+        </div>
+        <div>
+            <h3>Reg Ex</h3>
+            <script>
+                function regEx(){
+                    let ptn = /[a-z]/;
+                    console.log(ptn.test("huij"));
+                    console.log(ptn.test("89752"));
+                    ptn = /(?=.*[a-z])/;
+                    console.log(ptn.test("9869SDFSDG"));
+                    console.log(ptn.test("ACFdGR"));
+                    console.log(ptn.test("ACiFdGR"));
+                    console.log(ptn.test("oee"));
+                    ptn=/^a/;
+                    console.log(ptn.test("bhjbhj"));
+                    console.log(ptn.test("abhjbhj"));
+                }
+                regEx();
+            </script>
+        </div>
+    </div>
+</body>
+</html>
