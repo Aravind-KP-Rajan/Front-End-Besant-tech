@@ -12,16 +12,17 @@
             <h3>Set & Map</h3>
             <script>
                 function setMpEx(){
-
+                //SET---------
                     let st = new Set();
                     st.add("Soorya");
                     st.add("Jothika");
                     st.add("Gautham");
                     st.add("Dhanush");
+                    st.add("Vijay");
 
                     console.log(st);
                     st.add("Gautham");
-                    console.log(st);
+                    console.log(st); //set avoids duplicate value
                     st.delete("Jothika");
                     console.log(st);
                     console.log(st.has("Gautham"));
@@ -30,6 +31,7 @@
                     console.log(st.values());
                     console.log(st.entries());
 
+                    for(let ele of st){console.log(ele)}
                     for(let ele of st.keys()){ console.log(ele)}
                     for(let ele of st.values()){ console.log(ele)}
                     for(let ele of st.entries()){ console.log(ele)}
@@ -38,6 +40,7 @@
                     st.clear();
                     console.log(st);
 
+                //MAP------------
 
                     let mp = new Map();
                     mp.set(1001,"Soorya");
@@ -88,7 +91,7 @@
                     console.log(str.concat("la lala "));
                     console.log(str + "oooo oooo ");
                     console.log(str.padStart(50, "*"));
-                    console.log(str.padEnd(50, "*"));
+                    console.log(str.padEnd(33, "*"));
                     console.log(str.slice(6, 20));
                     console.log(str.split(" "));
                     console.log(str.toLowerCase());
