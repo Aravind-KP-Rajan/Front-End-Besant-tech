@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date and Time</title>
+</head>
+<body>
+  
+  
+  <div>DATE & TIME</div>
+
+
+  <h3>DATE</h3>
+
+  <div class="dateDiv"></div>
+
+  <script>
+
+    function datEx(){
+
+      let dateDiv = document.querySelector(".dateDiv");
+
+      let result = "";
+
+
+      let dt = new Date ();
+
+        result += (dt);
+        result += (dt.getDate());
+        result += (dt.getDay);
+        result += (dt.getFullYear);
+        result += (dt.getHours);
+        result += (dt.getMilliseconds);
+        result += (dt.getMinutes);
+        result += (dt.getMonth); // month stored in array so it'll start from 0 "add 1"
+        result += (dt.getSeconds);
+        result += (dt.getTime);
+        result += ("tomezoneOffSet" + dt.getTimezoneOffset);
+
+
+        let perDayMs = 24 * 60 * 60 * 1000;
+
+        let sevenDayMs = perDayMs * 20;
+
+        dt.setTime (dt.getTime()) - sevenDayMs;
+
+        dateDiv.innerHTML = result;
+
+      }
+
+      datEx();
+
+
+  </script>
+
+</body>
+</html>
