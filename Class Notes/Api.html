@@ -23,7 +23,8 @@
             <div class="col"><input type="text" id="pPrice" name="pPrice" class="form-control"/></div>
             <div class="col"><input type="text" id="pCount" name="pCount" class="form-control"/></div>
             <div class="col"><input type="text" id="pTotal" name="pTotal" class="form-control"/></div>
-            <div class="col"><button type="button" class="btn btn-success" onclick="addProduct()">Add Product</button></div>
+            <div class="col" id="addBtn"><button type="button" class="btn btn-success" onclick="addProduct()">Add Product</button></div>
+            <div class="col" id="updateBtn"><button type="button" class="btn btn-success" onclick="updateProduct()">Update Product</button></div>
         </div>
         <div id="productsOp">
 
@@ -36,7 +37,9 @@
         var pTotal="";
         var productsOp="";
         var products=[];
+        var updateProductId="";
         var apiUrl = "https://retoolapi.dev/rArpzK/products";
+        document.getElementById('updateBtn').style.display="none";
 
         function getInputs(){
             pName = document.getElementById('pName').value;
@@ -62,8 +65,10 @@
             }).then(response=>{
                 console.log(response);
                 getProducts();
+                resetData();
             })
         }
+        
         getProducts();
         function getProducts(){
             fetch(apiUrl)
@@ -85,18 +90,65 @@
                             '<div class="col">' + products[idx].pCount + '</div>'+
                             '<div class="col">' + products[idx].pTotal + '</div>'+
                             '<div class="col">'+
-                                '<button type="button" class="btn btn-warning">Update</button>'+
-                                '<button type="button" class="btn btn-danger">Delete</button>'+
+                                '<button type="button" class="btn btn-warning" onclick="getDataForUpdate('+ products[idx].id +')">Update</button>'+
+                                '<button type="button" class="btn btn-danger" onclick="deleteProduct('+ products[idx].id +')">Delete</button>'+
                             '</div>'+
                             '</div>';
             }
             document.getElementById('productsOp').innerHTML = result;
         }
+        function getDataForUpdate(productId){
+            let product = products.filter(prod=>{ return prod.id == productId})[0];
+            document.getElementById('pName').value = product.pName;
+            document.getElementById('pPrice').value = product.pPrice;
+            document.getElementById('pCount').value = product.pCount;
+            document.getElementById('pTotal').value = product.pTotal;
+            updateProductId = productId;
+            document.getElementById('updateBtn').style.display = "block";
+            document.getElementById('addBtn').style.display = "none";
+        }
         function updateProduct(){
             getInputs();
+            let apiUri = apiUrl + "/" + updateProductId;
+            let product = {
+                id: updateProductId,
+                pName: pName,
+                pPrice: pPrice,
+                pCount: pCount,
+                pTotal: pTotal
+            };
+            fetch(apiUri, {
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(product)
+            }).then(response=>{
+                alert("Product Updated Successfully...");
+                getProducts();
+                updateProductId = "";
+                document.getElementById('updateBtn').style.display = "none";
+                document.getElementById('addBtn').style.display = "block";
+                resetData();
+            })
         }
-        function deleteProduct(){
-
+        function resetData(){
+            document.getElementById('pName').value = "";
+            document.getElementById('pPrice').value = "";
+            document.getElementById('pCount').value = "";
+            document.getElementById('pTotal').value = "";
+        }
+        function deleteProduct(productId){
+            let apiUri = apiUrl + "/" + productId;
+            fetch(apiUri, {
+                method:'DELETE',
+                headers : {
+                    'Content-Type':'application/json;charset=utf-8'
+                }
+            }).then(response=>{
+                alert("Product Deleted Successfully...");
+                getProducts();
+            })
         }
     </script>
 </body>
